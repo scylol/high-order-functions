@@ -19,32 +19,7 @@
 
 //--------------------------------------------------------------------------------
 
-
-// Return only names that begin with 'R'
-// const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
-
-// const filteredNames = filter(myNames, function(name){
-//     // This is a "predicate function" - it's a function that only returns a boolean
-//     return name[0] === 'R';
-// });
-
-// console.log(filteredNames) // => ['Rich', 'Ray']
-
-// function filter(arr, fn) {
-// 	let newArray = [];
-// 	for(i=0;i<arr.length;i++){
-// 			const ele = arr[i];
-// 			if(fn(ele)) {
-// 			newArray.push(ele);
-// 			}
-// 	}
-
-	
-// 	return newArray;
-// }
-
-
-// filter(myNames,filteredNames);
+// Filter function
 
 // const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
 
@@ -64,38 +39,75 @@
 //     return newArray;
 // }
 
+// filter(myNames, name => name[0] === 'R');
 
-//rocksWarning('Main St and Pacific Ave');
-// => DANGER There is a Rocks on the Road hazard at Main St and Pacific Ave
-// => The Rocks on the Road hazard has triggered 1 time(s) today!
+//---------------------------------------------------------------------
 
-function hazardWarningCreator(typeOfWarning) {
-	let warningCounter = 0;
-	return function(location) {
-		warningCounter++;
-		console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
-		console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!`);
-	};
+// function hazardWarningCreator(typeOfWarning) {
+// 	let warningCounter = 0;
+// 	return function(location) {
+// 		warningCounter++;
+// 		console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+// 		console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!`);
+// 	};
 
-}
+// }
 
-const rocksWarning = hazardWarningCreator('Rocks on the Road');
-const iceWarning = hazardWarningCreator('Ice on the Road');
-const sheepWarning = hazardWarningCreator('Sheep on the Road!');
+// const rocksWarning = hazardWarningCreator('Rocks on the Road');
+// const iceWarning = hazardWarningCreator('Ice on the Road');
+// const sheepWarning = hazardWarningCreator('Sheep on the Road!');
 
-rocksWarning('Main St and Pacific Ave');
-iceWarning('37th and 8th');
-sheepWarning('5th Mulberry St');
-
+// rocksWarning('Main St and Pacific Ave');
+// iceWarning('37th and 8th');
+// sheepWarning('5th Mulberry St');
 
 
+//----------------------------------------------------------------------
+// filter function
+
+//function isEven(num) {
+//   return num % 2 === 0;
+// }
+
+// var myNumbers = [1, 2, 3, 4, 5, 6];
+
+// var evens = myNumbers.filter(isEven);
+// console.log(evens); // => [2, 4, 6]
+
+// let myArray = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+
+// let newArray = [].concat(...myArray);
 
 
+// function removesNegatives(num) {
+// 	return num >= 0;
+// }
+
+// var negs = newArray.filter(removesNegatives);
+
+// console.log(negs);
+
+//-----------------------------------------------------------------
+
+// Map function
+	
+	// let myArray = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
 
 
+	// let totalSteps = myArray.map(function(num) {
+	// 	return num[0] + num[1];
+	// });
 
+	// console.log(totalSteps);
 
+	//------------------------------------
 
+	let myArray = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+
+	let totalSteps = myArray.forEach(function(num) {
+		console.log(num[0] + num[1]);
+
+	});
 
 
 
