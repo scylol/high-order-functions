@@ -41,38 +41,37 @@
 
 // filter(myNames, name => name[0] === 'R');
 
-//---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 
-// function hazardWarningCreator(typeOfWarning) {
-// 	let warningCounter = 0;
-// 	return function(location) {
-// 		warningCounter++;
-// 		console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
-// 		console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!`);
-// 	};
+function hazardWarningCreator(typeOfWarning) {
+	let warningCounter = 0;
+	return function(location) {
+		warningCounter++;
+		let time = '';
+		if (warningCounter === 1) {
+			time = 'time';
+		}
+		else {
+			time = 'times';
+		}
+		console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+		console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} ${time} today!`);
+	};
 
-// }
+}
+// Bonus credit! Can you figure out how to log out "time" for a value of 1 and "times" for a value of 0 or > 2?
 
-// const rocksWarning = hazardWarningCreator('Rocks on the Road');
-// const iceWarning = hazardWarningCreator('Ice on the Road');
-// const sheepWarning = hazardWarningCreator('Sheep on the Road!');
+const rocksWarning = hazardWarningCreator('Rocks on the Road');
+const iceWarning = hazardWarningCreator('Ice on the Road');
+const sheepWarning = hazardWarningCreator('Sheep on the Road!');
 
-// rocksWarning('Main St and Pacific Ave');
-// iceWarning('37th and 8th');
-// sheepWarning('5th Mulberry St');
+rocksWarning('Main St and Pacific Ave');
+iceWarning('37th and 8th');
+sheepWarning('5th Mulberry St');
 
 
 //----------------------------------------------------------------------
 // filter function
-
-//function isEven(num) {
-//   return num % 2 === 0;
-// }
-
-// var myNumbers = [1, 2, 3, 4, 5, 6];
-
-// var evens = myNumbers.filter(isEven);
-// console.log(evens); // => [2, 4, 6]
 
 // let myArray = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
 
